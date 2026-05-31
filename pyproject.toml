@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "almgren-chriss-optimal-execution"
+version = "1.0.0"
+description = "Almgren-Chriss (2001) optimal liquidation: closed-form solution, efficient frontier, Monte Carlo simulation, real-data calibration, PyQt6 dashboard."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Yanis Blanco", email = "yanis.blanco2010@gmail.com" }]
+keywords = ["quantitative-finance", "optimal-execution", "almgren-chriss", "market-impact", "monte-carlo"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+dependencies = [
+    "numpy>=1.24,<3.0",
+    "scipy>=1.10,<2.0",
+    "pandas>=2.0,<3.0",
+    "matplotlib>=3.7,<4.0",
+    "yfinance>=0.2.18,<1.0",
+    "PyQt6>=6.5,<7.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4,<9.0",
+    "jupyter>=1.0,<3.0",
+    "nbformat>=5.9,<6.0",
+    "ipykernel>=6.0,<8.0",
+]
+
+[project.urls]
+Repository = "https://github.com/yanisblanco/almgren-chriss-optimal-execution"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
